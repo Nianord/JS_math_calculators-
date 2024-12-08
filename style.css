@@ -63,6 +63,7 @@ button::-moz-focus-inner {
 a,
 a:visited {
   text-decoration: none;
+  color: inherit;
 }
 
 a:hover {
@@ -88,6 +89,10 @@ h6 {
 }
 
 /*--------------------*/
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   max-width: 1400px;
   margin: 0 auto;
@@ -97,14 +102,15 @@ body {
 }
 
 section {
-  padding: 30px 0;
+  padding: 20px 0;
 }
-section:before {
+section:after {
   content: "";
   display: block;
-  height: 10px;
+  height: 3px;
   width: 100%;
-  background: #000;
+  background: #dcdcdc;
+  margin: 40px 0 -10px 0;
 }
 
 .container {
@@ -115,8 +121,21 @@ section:before {
   padding: 0 20px;
 }
 
+footer p {
+  font-size: 14px;
+  padding: 0 0 10px 0;
+}
+
 .menu {
   font-size: 18px;
+}
+.menu:after {
+  content: "";
+  display: block;
+  height: 10px;
+  width: 100%;
+  background: #000;
+  margin: 30px 0 0 0;
 }
 .menu__title {
   font-size: 26px;
@@ -161,7 +180,7 @@ section:before {
 }
 
 .title {
-  padding: 20px 0;
+  padding: 15px 0;
   position: relative;
   display: inline-block;
   line-height: 1.5;
@@ -183,26 +202,25 @@ section:before {
 }
 
 .result {
-  margin: 20px 0;
+  margin: 15px 0;
   font-size: 18px;
-  font-size: 16px;
 }
 .result span.counted {
   padding: 4px 20px;
   margin: 0 10px;
-  border: 2px solid #000;
+  border: 2px solid #ababab;
   color: #000;
 }
 
 input {
   font-size: 16px;
-  margin: 10px 0;
+  margin: 5px 0;
   padding: 5px;
-  border: 2px solid #000;
+  border: 2px solid #ababab;
 }
 
 button {
-  margin: 10px 0;
+  margin: 5px 0;
   padding: 5px;
   font-size: 16px;
   border: 2px solid #000;

@@ -5,23 +5,23 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css">
-	<title>jS math functions</title>
+	<title>Math and geometry calculators</title>
 </head>
 
 <body>
 	<div class="container">
 		<nav class="menu">
-			<h1 class="menu__title">Функции</h1>
+			<h1 class="menu__title">Калькуляторы фигур</h1>
 			<ul class="menu__list">
-				<li #square class="menu__link">Площадь и периметр прямоугольника</li>
-				<li class="menu__link">Площадь и периметр</li>
-				<li class="menu__link">Площадь</li>
+				<li class="menu__link"><a href="#square">Площадь и периметр прямоугольника</a></li>
+				<li class="menu__link"><a href="#circle">Площадь круга и длина окружности</a></li>
+				<li class="menu__link"><a href="#triangle">Площадь и периметр треугольника</a></li>
 				<li class="menu__link"></li>
 				<li class="menu__link"></li>
 			</ul>
 		</nav>
 
-		<section class="square">
+		<section class="square" id="square">
 			<h2 class="title">Площадь и периметр прямоугольника</h2>
 			<div>
 				<p class="text">Введите длину стороны 1</p>
@@ -33,6 +33,36 @@
 				<p class="square__result-lenght result">Результат: периметр<span></span></p>
 			</div>
 		</section>
+
+		<section class="circle" id="circle">
+			<h2 class="title">Площадь круга и длина окружности</h2>
+			<div>
+				<p class="text">Введите длину радиуса</p>
+				<input id="radius" type="number">
+				<button class="circle__btn">Посчитать</button>
+				<p class="circle__result-square result">Результат: площадь<span></span></p>
+				<p class="circle__result-lenght result">Результат: длина окружности<span></span></p>
+			</div>
+		</section>
+
+		<section class="triangle" id="triangle">
+			<h2 class="title">Площадь и периметр треугольника</h2>
+			<div>
+				<p class="text">Введите длину стороны 1</p>
+				<input id="triangle__side1" type=" number">
+				<p class="text">Введите длину стороны 2</p>
+				<input id="triangle__side2" type="number">
+				<p class="text">Введите длину стороны 3</p>
+				<input id="triangle__side3" type="number">
+				<button class="triangle__btn">Посчитать</button>
+				<p class="triangle__result-square result">Результат: площадь<span></span></p>
+				<p class="triangle__result-lenght result">Результат: периметр<span></span></p>
+			</div>
+		</section>
+
+		<footer>
+			<p>*все расчитанные значения округляются до сотых</p>
+		</footer>
 	</div>
 
 	<script src="script.js"></script>

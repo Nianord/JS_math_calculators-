@@ -60,3 +60,38 @@ function doTriangle() {
 }
 doTriangle();
 
+//угадай число
+function guessNum() {
+	let hiddenNumber = Math.round(Math.random() * 100);
+	console.log(hiddenNumber);
+	let guessNumField = document.querySelector('.guessNumber');
+	let btn = guessNumField.querySelector('.guessNumber__btn');
+	let result = guessNumField.querySelector('.guessNumber__result span');
+	let againBtn = guessNumField.querySelector('.guessNumber__againbtn');
+	if (againBtn) {
+		againBtn.remove();
+		result.innerHTML = '';
+	}
+	btn.addEventListener('click', checkNum);
+	function checkNum() {
+		let userNumber = guessNumField.querySelector('#guessNumber__number').value;
+		if (userNumber !== '') {
+			if (userNumber > hiddenNumber) {
+				result.innerHTML = 'Ваше число больше загаданного, попробуйте еще раз';
+			}
+			else if (userNumber < hiddenNumber) {
+				result.innerHTML = 'Ваше число меньше загаданного, попробуйте еще раз';
+			}
+			else if (userNumber == hiddenNumber) {
+				result.innerHTML = 'Ура! Вы отгадали число!';
+				result.outerHTML += '<br><button class="guessNumber__againbtn">Хочу еще!</button>';
+				let againBtn = guessNumField.querySelector('.guessNumber__againbtn');
+				againBtn.addEventListener('click', guessNum);
+			}
+		}
+		else {
+			result.innerHTML = 'Что-то пошло не так, попробуйте еще раз';
+		}
+	}
+}
+guessNum();
